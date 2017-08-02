@@ -73,10 +73,18 @@
       };
 
       // Question: What does this code do??
-      $.post("/api/new", newCharacter)
+      $.post("http://localhost:3000/api/new", newCharacter)
+  //this posts the object to the server via the /api/new route. In the server.js, is where we dictate what to do with the object.
       .done(function(data) {
+  //.done is the promise function, where we've indicated it should handle negotiations for the "data"
         console.log(data);
+
+  //this console logs the object in the html console.
+  //? The number is recorded as a string. 
+  //? How do we get it to record the value as a number, and not a string?
+
         alert("Adding character...");
+  //this flashes the alert that character is being added.
       });
     });
   </script>
